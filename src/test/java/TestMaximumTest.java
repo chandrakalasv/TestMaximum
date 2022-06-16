@@ -16,7 +16,7 @@ public class TestMaximumTest {
     }
     @Test
     public void givenIntegerNum_AtThirdPosition_WhenMax_ShouldReturnSameNUmberr() {
-        FindMaxNum number = new FindMaxNum();
+        FindMaxNum<Integer> number = new FindMaxNum();
         int maxNumAtThird = (int) number.maxNumber(2, 2, 10);
         Assert.assertEquals(10, maxNumAtThird);
     }
@@ -56,6 +56,25 @@ public class TestMaximumTest {
     public void givenString_AtThirdPosition_WhenMax_ShouldReturnSameString() {
         FindMaxNum string = new FindMaxNum();
         String stringAtThirdPos = (String) string.maxNumber("apple", "banana", "peach");
+        Assert.assertEquals("peach", stringAtThirdPos);
+    }
+
+    @Test
+    public void givenValue_AtFirstPosition_WhenMax_ShouldReturnSameNUmber() {
+        FindMaxNum<Integer> number = new FindMaxNum(10, 1, 2);
+        int maxNumAtFirst = number.testMaximum();
+        Assert.assertEquals(10, maxNumAtFirst);
+    }
+    @Test
+    public void givenValue_AtSecondPosition_WhenMax_ShouldReturnSameNUmber() {
+        FindMaxNum<Double> number = new FindMaxNum(2.9, 10.8, 1.8);
+        Double maxNumAtSecond = number.testMaximum();
+        Assert.assertEquals(10.8, maxNumAtSecond, 8);
+    }
+    @Test
+    public void givenValue_AtThirdPosition_WhenMax_ShouldReturnSameNUmber() {
+        FindMaxNum<String> number = new FindMaxNum("apple", "banana", "peach");
+        String stringAtThirdPos =  number.testMaximum();
         Assert.assertEquals("peach", stringAtThirdPos);
     }
 }
