@@ -3,21 +3,40 @@ import org.junit.Test;
 
 public class TestMaximumTest {
     @Test
-    public void givenMaxNum_AtFirstPosition_ReturnSameNUmber() {
-        FindMaxNum number = new FindMaxNum(10, 1, 1);
-        int maxNumAtFirst =  number.maxNumber();
+    public void givenIntegerNum_AtFirstPosition_WhenMax_ShouldReturnSameNUmber() {
+        FindMaxNum number = new FindMaxNum();
+        int maxNumAtFirst = number.maxNumber(10, 1, 2);
         Assert.assertEquals(10, maxNumAtFirst);
     }
     @Test
-    public void givenMaxNum_AtSecondPosition_ReturnSameNUmber() {
-        FindMaxNum number = new FindMaxNum(2, 10, 1);
-        int maxNumAtSecond = number.maxNumber();
+    public void givenIntegerNum_AtSecondPosition_WhenMax_ShouldReturnSameNUmber() {
+        FindMaxNum number = new FindMaxNum();
+        int maxNumAtSecond = number.maxNumber(2, 10, 1);
         Assert.assertEquals(10, maxNumAtSecond);
     }
     @Test
-    public void givenMaxNum_AtThirdPosition_ReturnSameNUmber() {
-        FindMaxNum number = new FindMaxNum(2, 2, 10);
-        int maxNumAtThird = (int) number.maxNumber();
+    public void givenIntegerNum_AtThirdPosition_WhenMax_ShouldReturnSameNUmberr() {
+        FindMaxNum number = new FindMaxNum();
+        int maxNumAtThird = number.maxNumber(2, 2, 10);
         Assert.assertEquals(10, maxNumAtThird);
+    }
+    @Test
+    public void givenFloatNum_AtFirstPosition_WhenMax_ShouldReturnSameNUmber() {
+        FindMaxNum number = new FindMaxNum();
+        double maxNumAtFirst = number.maxNumber(10.8, 2.6, 1.4);
+        Assert.assertEquals(10.8, maxNumAtFirst, 8);
+    }
+
+    @Test
+    public void givenFloatNum_AtSecondPosition_WhenMax_ShouldReturnSameNUmber() {
+        FindMaxNum number = new FindMaxNum();
+        double maxNumAtSecond = number.maxNumber(2.6, 10.8, 1.4);
+        Assert.assertEquals(10.8, maxNumAtSecond, 8);
+    }
+    @Test
+    public void givenFloatNum_AtThirdPosition_WhenMax_ShouldReturnSameNUmber() {
+        FindMaxNum number = new FindMaxNum();
+        double maxNumAtThird = number.maxNumber(2.6, 1.4, 10.8);
+        Assert.assertEquals(10.8, maxNumAtThird, 8);
     }
 }
