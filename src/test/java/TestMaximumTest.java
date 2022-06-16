@@ -39,4 +39,23 @@ public class TestMaximumTest {
         double maxNumAtThird = number.maxNumber(2.6, 1.4, 10.8);
         Assert.assertEquals(10.8, maxNumAtThird, 8);
     }
+    @Test
+    public void givenString_AtFirstPosition_WhenMax_ShouldReturnSameString() {
+        FindMaxNum string = new FindMaxNum();
+        String stringAtFirstPos = string.maxNumber("peach", "apple", "banana");
+        Assert.assertEquals("peach", stringAtFirstPos);
+    }
+
+    @Test
+    public void givenString_AtSecondPosition_WhenMax_ShouldReturnSameString() {
+        FindMaxNum string = new FindMaxNum();
+        String stringAtSecondPos = string.maxNumber("apple", "peach", "banana");
+        Assert.assertEquals("peach", stringAtSecondPos);
+    }
+    @Test
+    public void givenString_AtThirdPosition_WhenMax_ShouldReturnSameString() {
+        FindMaxNum string = new FindMaxNum();
+        String stringAtThirdPos = string.maxNumber("apple", "banana", "peach");
+        Assert.assertEquals("peach", stringAtThirdPos);
+    }
 }
